@@ -77,7 +77,7 @@ var_dump($tags);
 
   function validTag($tn){
 
-    $accept = ("panty", "pantys", "pantyshots");
+    $accept = array("panty", "pantys", "pantyshots");
     if(in_array($tn, $accept)){
       return true;
     }
