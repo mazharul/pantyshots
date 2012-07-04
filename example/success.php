@@ -52,21 +52,38 @@ var_dump($tags);
     if($i<=500){
       #echo "<img src=\"{$entry1->name}\">";
       $tag = $entry1->name;
+        
+        if(validTag($tag)){
+                  // Get recently tagged media
+          $media = $instagram->getTagMedia($tag);
 
-      // Get recently tagged media
-      $media = $instagram->getTagMedia($tag);
+              // Display results
+          foreach ($media->data as $data) {
+            echo "<div>";
+            echo "<a href=\"{$data->link}\"><img src=\"{$data->images->thumbnail->url}\"></a>";
+            echo "<span> Image By:".$data->user->username." tag: ".$tag."</span>";
+            echo "</div>";
+          }
+        }else{
+          continue;
+        }
 
-          // Display results
-      foreach ($media->data as $data) {
-        echo "<div>";
-        echo "<a href=\"{$data->link}\"><img src=\"{$data->images->thumbnail->url}\"></a>";
-        echo "<span> Image By:".$data->user->username." tag: ".$tag."</span>";
-        echo "</div>";
-      }
     }else{
       exit;
     }
     $i++;
+  }
+
+
+  function validTag($tn){
+
+    $accept = ("panty", "pantys", "pantyshots");
+    if(in_array($tn, $accept)){
+      return true;
+    }
+
+    return false;
+
   }
 
 
