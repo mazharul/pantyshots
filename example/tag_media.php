@@ -18,8 +18,8 @@ $tags = $instagram->searchTags('panty');
         if(validTag($tag)){
                   // Get recently tagged media
           $media = $instagram->getTagMedia($tag);
-          $dataToPrint['data1'] = getData($media, $tag);
-          $dataToPrint['data2']  = getDataByP($tag, $media->pagination->next_max_tag_id);
+           getData($media, $tag);
+           getDataByP($tag, $media->pagination->next_max_tag_id);
 
         }
 
@@ -30,13 +30,13 @@ $tags = $instagram->searchTags('panty');
   }
 
 
- foreach($dataToPrint['data1'] as $pr){
+ /*foreach($dataToPrint['data1'] as $pr){
  	echo $pr;
  }
 
  foreach($dataToPrint['data2'] as $pr2){
  	echo $pr2;
- }
+ }*/
 
 
   function validTag($tn){
@@ -51,39 +51,41 @@ $tags = $instagram->searchTags('panty');
   }
 
   function getData($media, $tag){
-      $i = 0;
-      $d = array();
+      //$i = 0;
+      //$d = array();
       // Display results
       foreach ($media->data as $data) {
         //echo "<div>";
-        $d[$i] = "<a href=\"{$data->link}\"><img src=\"{$data->images->thumbnail->url}\"></a>";
+        echo "<a href=\"{$data->link}\"><img src=\"{$data->images->thumbnail->url}\"></a>";
        // echo "<span> Image By:".$data->user->username." tag: ".$tag."</span>";
         //echo "</div>";
-        $i++;
+        //$i++;
       }
 
-      return $d;
+      //return $d;
   }
 
+  $p=0;
+
   function getDataByP($tag, $max, $p){
-	    global $instagram;
-	    $e = array();
+	    global $instagram, $p;
+	    //$e = array();
 
 	    if($p <= 10 ){
 
 	    	$d = $instagram->getTagMediaByP($tag, $max);
-		    $j = 0;
+		   // $j = 0;
 		    foreach ($d->data as $dat) {
 		        //echo "<div>";
-		        $e[$j] = "<a href=\"{$dat->link}\"><img src=\"{$dat->images->thumbnail->url}\"></a>";
+		       echo  "<a href=\"{$dat->link}\"><img src=\"{$dat->images->thumbnail->url}\"></a>";
 		        //echo "<span> Image By:".$dat->user->username." tag: ".$tag."</span>";
 		        //echo "</div>";
-		        $j++;
+		        //$j++;
 		    }
 		    //for($i=0; $i<=2; $i++){
 		    getDataByP($tag, $d->pagination->next_max_tag_id);
 		    //}
-		    
+		    $p++;
 		}
 	    
 	    return $e;
