@@ -34,7 +34,7 @@ $tags = $instagram->searchTags('panty');
 
   function validTag($tn){
 
-    $accept = array("panty", "pantys", "pantyshots");
+    $accept = array("panty");
     if(in_array($tn, $accept)){
       return true;
     }
@@ -56,6 +56,7 @@ $tags = $instagram->searchTags('panty');
   function getDataByP($tag, $max){
     global $instagram;
     $d = $instagram->getTagMediaByP($tag, $max);
+    
     foreach ($d->data as $dat) {
         //echo "<div>";
         echo "<a href=\"{$dat->link}\"><img src=\"{$dat->images->thumbnail->url}\"></a>";
