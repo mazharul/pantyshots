@@ -39,7 +39,7 @@
       $instagram = new Instagram(array(
         'apiKey'      => '08dc3c1f103c4b9693aab4c81a4d9868',
         'apiSecret'   => 'c93445ca19034311950484d5ad744f7e',
-        'apiCallback' => 'http://pantyshots.pagodabox.com/example/success.php' // must point to success.php
+        'apiCallback' => 'http://vps.mazharulanwar.com/pantyshots/example/success.php' // must point to success.php
       ));
       
       // Display the login button
