@@ -19,7 +19,7 @@ $tags = $instagram->searchTags('panty');
                   // Get recently tagged media
           $media = $instagram->getTagMedia($tag);
            getData($media, $tag);
-           getDataByP($tag, $media->pagination->next_max_tag_id);
+           getDataByP($tag, $media->pagination->next_max_tag_id, 0);
 
         }
 
@@ -65,10 +65,10 @@ $tags = $instagram->searchTags('panty');
       //return $d;
   }
 
-  $p=0;
+
 
   function getDataByP($tag, $max, $p){
-	    global $instagram, $p;
+	    global $instagram;
 	    //$e = array();
 
 	    if($p <= 10 ){
@@ -82,13 +82,14 @@ $tags = $instagram->searchTags('panty');
 		        //echo "</div>";
 		        //$j++;
 		    }
+		    $p = $p+1;
 		    //for($i=0; $i<=2; $i++){
-		    getDataByP($tag, $d->pagination->next_max_tag_id);
+		    getDataByP($tag, $d->pagination->next_max_tag_id, $p);
 		    //}
-		    $p++;
+		    
 		}
 	    
-	    return $e;
+	    //return $e;
    }
 
 ?>
