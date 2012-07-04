@@ -71,7 +71,7 @@ $tags = $instagram->searchTags('panty');
 	    global $instagram;
 	    //$e = array();
 
-	    if($p <= 10 ){
+	    if($p <= 50 ){
 
 	    	$d = $instagram->getTagMediaByP($tag, $max);
 		   // $j = 0;
