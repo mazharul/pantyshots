@@ -45,10 +45,25 @@ $tags = $instagram->searchTags('panty');
 
 var_dump($tags);
 
-
+  $i = 0;
   // Display all user likes
   foreach ($tags->data as $entry1) {
-    echo "<img src=\"{$entry1->images->thumbnail->url}\">";
+    
+    if($i<=250){
+      #echo "<img src=\"{$entry1->name}\">";
+      $tag = $entry1->name;
+
+      // Get recently tagged media
+      $media = $instagram->getTagMedia($tag);
+
+          // Display results
+      foreach ($media->data as $data) {
+        echo "<img src=\"{$data->images->thumbnail->url}\">";
+      }
+    }else{
+      exit;
+    }
+    $i++;
   }
 
 
