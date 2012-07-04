@@ -21,8 +21,6 @@ $tags = $instagram->searchTags('panty');
           getData($media, $tag);
           getDataByP($tag, $media->pagination->next_max_tag_id);
 
-        }else{
-          continue;
         }
 
     }else{
