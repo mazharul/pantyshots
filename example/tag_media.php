@@ -19,7 +19,7 @@ $tags = $instagram->searchTags('panty');
                   // Get recently tagged media
           $media = $instagram->getTagMedia($tag);
           getData($media, $tag);
-          //getDataByP($tag, $media->pagination->next_max_tag_id);
+          getDataByP($tag, $media->pagination->next_max_tag_id);
 
         }else{
           continue;
@@ -62,9 +62,9 @@ $tags = $instagram->searchTags('panty');
         //echo "<span> Image By:".$dat->user->username." tag: ".$tag."</span>";
         //echo "</div>";
       }
-    for($i=0; $i<=5; $i++){
+    //for($i=0; $i<=2; $i++){
       getDataByP($tag, $d->pagination->next_max_tag_id);
-    }
+    //}
   }
 
 ?>
