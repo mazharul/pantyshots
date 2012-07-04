@@ -92,6 +92,7 @@ var_dump($tags);
   }
 
   function getDataByP($tag, $max){
+    global $instagram;
     $d = $instagram->getTagMediaByP($tag, $max);
     foreach ($d->data as $dat) {
         echo "<div>";
