@@ -84,7 +84,8 @@ $tags = $instagram->searchTags('panty');
 		    }
 		    $p = $p+1;
 		    //for($i=0; $i<=2; $i++){
-		    flushIt();
+		    ob_start();
+		    flush();
 		    getDataByP($tag, $d->pagination->next_max_tag_id, $p);
 		    //}
 		    
