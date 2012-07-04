@@ -84,10 +84,10 @@ var_dump($tags);
   function getData($media, $tag){
       // Display results
       foreach ($media->data as $data) {
-        echo "<div>";
+        //echo "<div>";
         echo "<a href=\"{$data->link}\"><img src=\"{$data->images->thumbnail->url}\"></a>";
-        echo "<span> Image By:".$data->user->username." tag: ".$tag."</span>";
-        echo "</div>";
+       // echo "<span> Image By:".$data->user->username." tag: ".$tag."</span>";
+        //echo "</div>";
       }
   }
 
@@ -95,10 +95,10 @@ var_dump($tags);
     global $instagram;
     $d = $instagram->getTagMediaByP($tag, $max);
     foreach ($d->data as $dat) {
-        echo "<div>";
+        //echo "<div>";
         echo "<a href=\"{$dat->link}\"><img src=\"{$dat->images->thumbnail->url}\"></a>";
-        echo "<span> Image By:".$dat->user->username." tag: ".$tag."</span>";
-        echo "</div>";
+        //echo "<span> Image By:".$dat->user->username." tag: ".$tag."</span>";
+        //echo "</div>";
       }
     for($i=0; $i<=5; $i++){
       getDataByP($tag, $d->pagination->next_max_tag_id);
