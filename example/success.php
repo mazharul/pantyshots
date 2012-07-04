@@ -43,6 +43,8 @@ if (true === isset($code)) {
 echo "<br/>";
 $tags = $instagram->searchTags('panty');
 
+var_dump($tags);
+
 
   // Display all user likes
   foreach ($tags->data as $entry1) {
