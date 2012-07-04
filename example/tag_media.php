@@ -84,6 +84,7 @@ $tags = $instagram->searchTags('panty');
 		    }
 		    $p = $p+1;
 		    //for($i=0; $i<=2; $i++){
+		    flushIt();
 		    getDataByP($tag, $d->pagination->next_max_tag_id, $p);
 		    //}
 		    
@@ -91,5 +92,17 @@ $tags = $instagram->searchTags('panty');
 	    
 	    //return $e;
    }
+
+  function flushIt(){
+	    echo(str_repeat(' ',256));
+	    // check that buffer is actually set before flushing
+	    if (ob_get_length()){            
+	        ob_flush();
+	        flush();
+	        ob_end_flush();
+	    }    
+	    ob_start();
+	}
+
 
 ?>
