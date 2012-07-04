@@ -40,4 +40,14 @@ if (true === isset($code)) {
 
 }
 
+echo "<br/>";
+$tags = $instagram->searchTags('panty');
+
+
+  // Display all user likes
+  foreach ($tags->data as $entry1) {
+    echo "<img src=\"{$entry1->images->thumbnail->url}\">";
+  }
+
+
 ?>
