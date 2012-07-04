@@ -1,11 +1,11 @@
 <?php
 
-require 'instagram.class.php';
+require '../instagram.class.php';
 
 // Initialize class for public requests
-$instagram = new Instagram('YOUR_APP_KEY');
+$instagram = new Instagram('08dc3c1f103c4b9693aab4c81a4d9868');
 
-$tag = 'winter';
+$tag = 'panty';
 
 // Get recently tagged media
 $media = $instagram->getTagMedia($tag);
