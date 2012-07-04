@@ -267,6 +267,16 @@ class Instagram {
   }
 
   /**
+   * Get a recently tagged media through pagination
+   *
+   * @param string $name                  Valid tag name
+   * @return mixed
+   */
+  public function getTagMediaByP($name, $max) {
+    return $this->_makeCall('tags/' . $name . '/media/recent', false, array('max_tag_id' => $max));
+  }
+
+  /**
    * Get the OAuth data of a user by the returned callback code
    *
    * @param string $code                  OAuth2 code variable (after a successful login)
