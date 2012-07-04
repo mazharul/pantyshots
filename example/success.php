@@ -60,7 +60,7 @@ var_dump($tags);
       foreach ($media->data as $data) {
         echo "<div>";
         echo "<a href=\"{$data->link}\"><img src=\"{$data->images->thumbnail->url}\"></a>";
-        echo "<span> Image By:".$data->user->username."</span>";
+        echo "<span> Image By:".$data->user->username." tag: ".$tag."</span>";
         echo "</div>";
       }
     }else{
