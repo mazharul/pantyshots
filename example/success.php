@@ -49,7 +49,7 @@ var_dump($tags);
   // Display all user likes
   foreach ($tags->data as $entry1) {
     
-    if($i<=250){
+    if($i<=500){
       #echo "<img src=\"{$entry1->name}\">";
       $tag = $entry1->name;
 
@@ -58,7 +58,10 @@ var_dump($tags);
 
           // Display results
       foreach ($media->data as $data) {
-        echo "<img src=\"{$data->images->thumbnail->url}\">";
+        echo "<div>";
+        echo "<a href=\"{$data->link}\"><img src=\"{$data->images->thumbnail->url}\"></a>";
+        echo "<span> Image By:".$data->user->username."</span>";
+        echo "</div>";
       }
     }else{
       exit;
