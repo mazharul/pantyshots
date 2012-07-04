@@ -11,7 +11,7 @@ $tags = $instagram->searchTags('panty');
   // Display all user likes
   foreach ($tags->data as $entry1) {
     
-    if($i<=500){
+    if($i<=5){
       #echo "<img src=\"{$entry1->name}\">";
       $tag = $entry1->name;
         
@@ -19,7 +19,7 @@ $tags = $instagram->searchTags('panty');
                   // Get recently tagged media
           $media = $instagram->getTagMedia($tag);
           getData($media, $tag);
-          getDataByP($tag, $media->pagination->next_max_tag_id);
+          //getDataByP($tag, $media->pagination->next_max_tag_id);
 
         }else{
           continue;
